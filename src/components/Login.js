@@ -1,6 +1,11 @@
 import React from "react"
+import { useNavigate } from "react-router-dom";
 
 function Login(){
+
+  const navigate = useNavigate()
+
+
     return (
         <section className="vh-100">
         <div className="container py-5 h-100">
@@ -18,7 +23,7 @@ function Login(){
            <div className="d-flex justify-content-around align-items-center mb-4">
            </div>
            <button type="submit" className="btn btn-primary btn-lg btn-block">Sign in</button>
-            <button className="btn btn-secondary btn-lg btn-block ms-2">Sign Up</button>
+            <button className="btn btn-secondary btn-lg btn-block ms-2" onClick={() => navigate('/signup')}>Sign Up</button>
            </form>
          </div>
        </div>
