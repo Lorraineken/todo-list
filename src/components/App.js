@@ -8,23 +8,19 @@ import TodoPage from './TodoPage';
 
 function App() {
   
-  const[username, SetUsername] = useState('')
-  const[email, SetEmail] = useState('')
-  const[password, SetPassword] = useState('')
+  const [users,setUsers] =useState([])
+  console.log (users)
 
-  
-  
-  
   return (
     <div>
      <Routes>
      <Route
          path ="/"
-         element={<Login SetEmail={() => SetEmail()} SetPassword = {() => SetPassword()}/>}
+         element={<Login />}
         />
       <Route 
          path = "/signup"
-         element={<Signup />}
+         element={<Signup setUsers={setUsers}/>}
       />
       <Route
       path = "/todopage"

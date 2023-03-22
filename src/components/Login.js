@@ -1,19 +1,28 @@
-import React from "react"
+import React,{useState} from "react"
 import { useNavigate } from "react-router-dom";
 
-function Login({SetEmail, SetPassword}){
+function Login(){
 
   const navigate = useNavigate()
+  const[email, SetEmail] = useState('')
+  const[password, SetPassword] = useState('')
+
   
+  
+  function handleSubmit(e){
+    e.preventDefault()
+
+
+  }
     
     return (
         <section className="vh-100">
         <div className="container py-5 h-100">
         <div className="row d-flex align-items-center justify-content-center h-100">
         <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-         <form >
+         <form onSubmit={(e) => handleSubmit(e)}>
            <div className="form-outline mb-4">
-             <input type="email"  id="form1-mail" className="form-control form-control-lg"  onChange={(e) => SetEmail(e.target.value)} />
+             <input type="email"  id="form1-mail"  className="form-control form-control-lg"  onChange={(e) => SetEmail(e.target.value)} />
              <label className="form-label" htmlFor="form1-mail">Email address</label>
            </div>
            <div className="form-outline mb-4">
