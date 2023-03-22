@@ -1,11 +1,11 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
 
-function Login(){
+function Login({SetEmail, SetPassword}){
 
   const navigate = useNavigate()
-
-
+  
+    
     return (
         <section className="vh-100">
         <div className="container py-5 h-100">
@@ -13,11 +13,11 @@ function Login(){
         <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
          <form >
            <div className="form-outline mb-4">
-             <input type="email"  id="form1-mail" className="form-control form-control-lg"  />
+             <input type="email"  id="form1-mail" className="form-control form-control-lg"  onChange={(e) => SetEmail(e.target.value)} />
              <label className="form-label" htmlFor="form1-mail">Email address</label>
            </div>
            <div className="form-outline mb-4">
-             <input type="password"  id="form1-pswd" className="form-control form-control-lg"  />
+             <input type="password"  id="form1-pswd" className="form-control form-control-lg" onChange ={(e)=> SetPassword(e.target.value)} />
              <label className="form-label" htmlFor="form1-pswd">Password</label>
            </div>
            <div className="d-flex justify-content-around align-items-center mb-4">
