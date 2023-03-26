@@ -12,8 +12,9 @@ function App() {
   
   const [users,setUsers] =useState([])
   const [todo,setTodo] =useState([])
-  
+  const  [update, setUpdate] = useState()
 
+  
   return (
     <div>
      <Routes>
@@ -27,7 +28,7 @@ function App() {
       />
       <Route
       path = "/todopage"
-      element ={<TodoPage users ={users} todo ={todo}/>}
+      element ={<TodoPage users ={users} todo ={todo}  update ={update}/>}
       />
       <Route 
        path = "/addtodo"
@@ -35,7 +36,7 @@ function App() {
       />
       <Route
        path = "/updatetodo"
-       element = {<UpdateTodo />}
+       element = {<UpdateTodo setUpdate ={setUpdate}/>}
       />
      </Routes>
     </div>

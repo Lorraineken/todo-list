@@ -21,6 +21,7 @@ function AddTodo({setTodo}){
     function handleSubmit(e){
         e.preventDefault() 
         new_todo.push(todo_data)
+        setTodo(new_todo)
         navigate('/todopage')
     }
 

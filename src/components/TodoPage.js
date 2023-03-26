@@ -1,15 +1,18 @@
-import React from "react";
+import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-function TodoPage({users,todo}){
+function TodoPage({users,todo,update}){
 
     const navigate = useNavigate()
     const created = []
     const started = []
     const completed = []
     const cancelled = []
+    
 
-
+    
+    
+    
     const displayuser = users.map((detail) =>{
         return (
             <ul key={`${detail.username}${detail.index}`}>
@@ -39,7 +42,10 @@ function TodoPage({users,todo}){
     todo.map((item) => {
         sample_todos.push(item)
     })
+
     
+   
+
 
     sample_todos.map((item) => 
     {
@@ -59,6 +65,8 @@ function TodoPage({users,todo}){
         
     })
 
+    
+
     const created_todos = created.map((item => {
         return(
             <div className="mt-3, container"  key={`${item.index}${item.description}`}>
@@ -66,7 +74,10 @@ function TodoPage({users,todo}){
              <li> {item.title} </li>
             <p>{item.description}</p>   
              
-            <button className="btn btn-dark">Update</button>
+            <button className="btn btn-dark" onClick={() => {
+              let  num =created.indexOf(item)
+                navigate("/updatetodo")
+            }}>Update</button>
              <button className="btn btn-danger ms-2" >x</button> 
                 </div>
              
@@ -81,7 +92,7 @@ function TodoPage({users,todo}){
              <li> {item.title} </li>
             <p>{item.description}</p>   
              
-            <button className="btn btn-dark">Update</button>
+            <button className="btn btn-dark"onClick={() => navigate("/updatetodo")}>Update</button>
              <button className="btn btn-danger ms-2" >x</button> 
                 </div>
              
@@ -96,7 +107,7 @@ function TodoPage({users,todo}){
              <li> {item.title} </li>
             <p>{item.description}</p>   
              
-            <button className="btn btn-dark">Update</button>
+            <button className="btn btn-dark" onClick={() => navigate("/updatetodo")}>Update</button>
              <button className="btn btn-danger ms-2" >x</button> 
                 </div>
              
@@ -111,7 +122,7 @@ function TodoPage({users,todo}){
              <li> {item.title} </li>
             <p>{item.description}</p>   
              
-            <button className="btn btn-dark">Update</button>
+            <button className="btn btn-dark" onClick={() => navigate("/updatetodo")}>Update</button>
              <button className="btn btn-danger ms-2" >x</button> 
                 </div>
              
