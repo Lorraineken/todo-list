@@ -10,6 +10,7 @@ import AddTodo from './AddTodo';
 function App() {
   
   const [users,setUsers] =useState([])
+  const [todo,setTodo] =useState([])
   
 
   return (
@@ -25,11 +26,11 @@ function App() {
       />
       <Route
       path = "/todopage"
-      element ={<TodoPage users ={users} />}
+      element ={<TodoPage users ={users} todo ={todo}/>}
       />
       <Route 
        path = "/addtodo"
-       element = {<AddTodo />}
+       element = {<AddTodo setTodo ={setTodo}/>}
       />
      </Routes>
     </div>

@@ -19,7 +19,6 @@ function Signup({setUsers}) {
         e.preventDefault()
         users.push(signupData)
         setUsers(users)
-        
         navigate("/")
     }
 
