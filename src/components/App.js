@@ -4,6 +4,7 @@ import '../App.css';
 import Login from './Login';
 import Signup from './Signup';
 import TodoPage from './TodoPage';
+import AddTodo from './AddTodo';
 
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
       <Route
       path = "/todopage"
       element ={<TodoPage users ={users} />}
+      />
+      <Route 
+       path = "/addtodo"
+       element = {<AddTodo />}
       />
      </Routes>
     </div>
