@@ -1,17 +1,20 @@
 import React,{useState} from "react"
 import { useNavigate } from "react-router-dom";
 
-function Login(){
+function Login({users}){
 
   const navigate = useNavigate()
   const[email, SetEmail] = useState('')
   const[password, SetPassword] = useState('')
-
   
   
   function handleSubmit(e){
     e.preventDefault()
-
+    users.map((detail) => {
+      if(detail.email === email && detail.password === password){
+        navigate('/todopage')
+      }
+    })
 
   }
     

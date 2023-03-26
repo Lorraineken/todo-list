@@ -9,14 +9,14 @@ import TodoPage from './TodoPage';
 function App() {
   
   const [users,setUsers] =useState([])
-  console.log (users)
+  
 
   return (
     <div>
      <Routes>
      <Route
          path ="/"
-         element={<Login />}
+         element={<Login users={users} />}
         />
       <Route 
          path = "/signup"
@@ -24,7 +24,7 @@ function App() {
       />
       <Route
       path = "/todopage"
-      element ={<TodoPage />}
+      element ={<TodoPage users ={users} />}
       />
      </Routes>
     </div>

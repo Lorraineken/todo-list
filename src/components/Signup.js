@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-
+import { useNavigate } from "react-router-dom"
 
 function Signup({setUsers}) {
 
@@ -7,6 +7,7 @@ function Signup({setUsers}) {
     const[email,SetEmail] =useState('')
     const[password,SetPassword] = useState('')
     const users = []
+    const navigate = useNavigate()
 
     const signupData = {
         "username":username,
@@ -18,7 +19,7 @@ function Signup({setUsers}) {
         e.preventDefault()
         users.push(signupData)
         setUsers(users)
-        
+        navigate("/")
     }
 
     return(
