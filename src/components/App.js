@@ -5,6 +5,7 @@ import Login from './Login';
 import Signup from './Signup';
 import TodoPage from './TodoPage';
 import AddTodo from './AddTodo';
+import UpdateTodo from './UpdateTodo';
 
 
 function App() {
@@ -31,6 +32,10 @@ function App() {
       <Route 
        path = "/addtodo"
        element = {<AddTodo setTodo ={setTodo}/>}
+      />
+      <Route
+       path = "/updatetodo"
+       element = {<UpdateTodo />}
       />
      </Routes>
     </div>
